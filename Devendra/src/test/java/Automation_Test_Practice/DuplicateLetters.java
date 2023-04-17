@@ -17,6 +17,7 @@ public class DuplicateLetters {
             else {
                 map.put(ch, 1);
             }
+            
         }
         
         //iterate through the map to print the characters with count more than 1
