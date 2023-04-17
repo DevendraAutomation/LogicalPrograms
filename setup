@@ -1,0 +1,42 @@
+package test;
+
+import org.testng.annotations.Test;
+
+import pages.Add_to_cart;
+import pages.Cart_Backlog_Page;
+import pages.HomePage;
+
+public class DemoTest extends BaseTest {
+
+	@Test
+	public void DemoExample() throws InterruptedException {
+
+		// Application URL : https://magento.softwaretestingboard.com/
+
+		HomePage homepage = new HomePage(driver);
+
+		homepage.navigateTo("Women", "Tops", "Tees");
+
+		Add_to_cart cart = new Add_to_cart(driver);
+		cart.add_Product("Desiree Fitness Tee ");
+		cart.Select_theProductColour("Yellow");
+		cart.Select_product_size("XL");
+		cart.add_To_item();
+		cart.openCart();
+		cart.open_cartItem();
+		Cart_Backlog_Page cartBag= new Cart_Backlog_Page(driver);
+		cartBag.enterEmail("deeveeennd");
+		cartBag.enter_Surname("kkghj");
+		cartBag.ente_Company("TCS");
+		cartBag.enter_street("12-39 dahadjadhjdagyagdadjasda");
+		cartBag.enter_city("HYDERABAD");
+		cartBag.select_State("57");
+		
+				
+		// 1. Select any product
+
+		// 2. Select the size, color and click Add to cart
+
+		// 3. Verify the message "You added <ProdcutName> to your shopping cart.”
+	}
+}
